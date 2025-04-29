@@ -79,7 +79,7 @@ const ConfessionTextField = forwardRef((props, ref) => {
                        textboxborder={textBoxBorder}
                        size="medium"
                        rows={4}
-                       label="write what's on your mind"
+                       label="?What's on your mind"
                        variant="outlined"
                        value={confession}
                        name="entry.638196057"

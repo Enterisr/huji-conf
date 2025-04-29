@@ -5,7 +5,9 @@ import {darkTheme} from "../../themes/darkTheme";
 import React, {forwardRef, useState, useImperativeHandle} from 'react';
 import {alpha, styled} from '@mui/material/styles';
 import Switch from "@mui/material/Switch";
+import Typography from '@mui/material/Typography';
 import TextField from "@mui/material/TextField";
+
 import {makeStyles} from "@mui/styles";
 
 
@@ -160,18 +162,22 @@ const NumberSwitch = forwardRef((props, ref) => {
     };
 
     return (
+        <>
         <Grid container
               justifyContent="center"
               alignItems="center"
               className="switch-box"
-        >
-            <p className="switch-text">is this a comment for an existing confession?</p>
-            <CostumedSwitch {...label
-                            }
-                            onChange={
-                                (event) => handleConfessionNumberBox(event)
-                            }
-            />
+        > 
+
+         <CostumedSwitch {...label
+        }
+        onChange={
+            (event) => handleConfessionNumberBox(event)
+        }
+        />
+            <Typography>  This is a response confession </Typography>
+            </Grid>
+            <Grid position={"relative"}  width={"100%"} display={"flex"}justifyContent={"center"}>
             <TextField
                 required
                 className={classes.cssTextField}
@@ -184,7 +190,8 @@ const NumberSwitch = forwardRef((props, ref) => {
                 }
                 value={numberBoxText}
             />
-        </Grid>
+            </Grid>
+            </>
     );
 });
 

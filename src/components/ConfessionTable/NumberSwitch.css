@@ -3,8 +3,13 @@
     --switch-text:#323842;
 }
 .switch-text{
-    font-size:14px;
-    width:100px;
+    font-size:1.1em;
     text-align:center;
     color: var(--switch-text);
+}
+.switch-box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 1em;
 }

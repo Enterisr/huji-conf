@@ -1,18 +1,12 @@
 import './Header.css';
-import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
 import {lightTheme} from '../themes/lightTheme'
 import {darkTheme} from "../themes/darkTheme";
 import * as React from "react";
 import {GiSecretBook} from 'react-icons/gi';
 import {GiNightSky} from 'react-icons/gi';
 import {FaFacebook} from 'react-icons/fa'
-import {useHistory} from "react-router-dom";
 
 const Header = (props) => {
-
-    // for url purposes
-    const history = useHistory();
 
     function changeTheme() {
         props.theme === 'light' ? props.onChangeTheme('dark') : props.onChangeTheme('light');
@@ -34,17 +28,7 @@ const Header = (props) => {
         }
     }
 
-    const LoginButton = styled(IconButton)(({ theme }) => ({
-        backgroundColor: 'none',
-        color:'white',
-        top:'-3px',
-        margin:'5px',
-        fontSize:'30',
-        transition:'all 0.3s ease',
-        '&:hover': {
-            backgroundColor: 'rgba(242,242,242,0.3)',
-        },
-    }));
+
 
     renderTheme();
 
@@ -63,9 +47,6 @@ const Header = (props) => {
                 <span className="space"/>
                 <FaFacebook className="facebook-link"
                             onClick={() => window.open("https://www.facebook.com/ConfessionsHUJI/")}/>
-                {/*<LoginButton>*/}
-                {/*    <RiLoginBoxFill className="login-button" onClick={() => history.push('edrftg')}/>*/}
-                {/*</LoginButton>*/}
             </div>
         </div>
     );

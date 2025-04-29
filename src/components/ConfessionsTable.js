@@ -7,7 +7,7 @@ import SendIcon from '@mui/icons-material/Send';
 import {styled} from '@mui/material/styles';
 import ConfessionTextField from "./ConfessionTable/ConfessionTextField"
 import NumberSwitch from "./ConfessionTable/NumberSwitch";
-import EmailTwoToneIcon from "@mui/icons-material/EmailTwoTone";
+import EmailRounded from "@mui/icons-material/EmailRounded";
 import {lightTheme} from "../themes/lightTheme";
 import {darkTheme} from "../themes/darkTheme";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -64,12 +64,13 @@ const ConfessionsTable = (props) => {
                 method: 'post',
                 mode: 'no-cors'
             });
-        fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFSuPQRrqFYtcdfPAFbZgjyjk3QCri_HMQZvZcBevu6B3sNQ/formResponse",
-            {
-                body: formData,
-                method: 'post',
-                mode: 'no-cors'
-            });
+            
+        // fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFSuPQRrqFYtcdfPAFbZgjyjk3QCri_HMQZvZcBevu6B3sNQ/formResponse",
+        //     {
+        //         body: formData,
+        //         method: 'post',
+        //         mode: 'no-cors'
+        //     });
 
         // mongo
         // await fetch("http://localhost:5000/record/add", {
@@ -145,7 +146,7 @@ const ConfessionsTable = (props) => {
                     <ConfessionTableTitle
                         theme={props.theme}
                         title="Send a Confession"
-                        icon={<EmailTwoToneIcon/>}/>
+                        icon={<EmailRounded/>}/>
                     <ConfessionTextField
                         theme={props.theme}
                         onSaveConfessionText={(data) => {
@@ -163,6 +164,7 @@ const ConfessionsTable = (props) => {
                           alignItems="flex-end"
                           justify="flex-end">
                         <ColorButton variant="contained"
+                        
                                      onClick={() => {
                                          if (formRef.current.reportValidity()) {
                                              onSubmission();
@@ -171,7 +173,7 @@ const ConfessionsTable = (props) => {
                                      }
                                      }
                                      endIcon={<SendIcon/>}>
-                            submit
+                            Send
                         </ColorButton>
                         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                             <div className="modal">
