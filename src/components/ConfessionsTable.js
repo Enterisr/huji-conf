@@ -64,7 +64,7 @@ const ConfessionsTable = (props) => {
                 method: 'post',
                 mode: 'no-cors'
             });
-            
+
         // fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSfFSuPQRrqFYtcdfPAFbZgjyjk3QCri_HMQZvZcBevu6B3sNQ/formResponse",
         //     {
         //         body: formData,
@@ -177,9 +177,9 @@ const ConfessionsTable = (props) => {
                         </ColorButton>
                         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                             <div className="modal">
-                                <a className="close" onClick={closeModal}>
+                                <div role='button' className="close" onClick={closeModal}>
                                     &times;
-                                </a>
+                                </div>
                                 <div className="header"> All done ✅</div>
                                 <div className="content">
                                     Your submission was made successfully!
